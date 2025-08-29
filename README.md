@@ -23,7 +23,7 @@ O projeto nasceu com a ideia de **facilitar a vida de estudantes** que precisam 
 
 📌 Status: Projeto em desenvolvimento 🚧
 
-##🗺️ Roadmap
+## 🗺️ Roadmap
 	•	📊 Estatísticas de fotos
 	•	Quantidade de registros por disciplina
 	•	Dias mais ativos de estudo/captura
