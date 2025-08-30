@@ -177,9 +177,10 @@ struct CameraView: View {
         // Modal para salvar foto
         .sheet(isPresented: $showSavePictureModal) {
             if let image = capturedImage {
-                SavePictureView(image: image, isEditing: false)
+                SavePictureView(image: image, isEditing: false, pictureToEdit: nil)
             }
         }
+        .presentationDragIndicator(.visible)
     }
 }
 

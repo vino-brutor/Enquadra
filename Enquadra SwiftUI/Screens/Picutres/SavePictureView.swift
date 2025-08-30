@@ -15,9 +15,22 @@ struct SavePictureView: View {
     @State var isLoading: Bool = false
     @State var isEditing: Bool
     
-    @FocusState var isKeyboardFocused: Bool //State pra fazer com que o teclado saia da tela
+    @FocusState var isKeyboardFocused: Bool  //State pra fazer com que o teclado saia da tela
     
     var pictureToEdit: Picture?
+    
+    init(image: UIImage, isEditing: Bool, pictureToEdit: Picture?) {
+        let appearance = UINavigationBarAppearance()
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
+        appearance.backgroundColor = UIColor(Color.nublado)
+        
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        
+        self.image = image
+        self.isEditing = isEditing
+        self.pictureToEdit = pictureToEdit
+    }
     
     var body: some View {
         NavigationStack {
@@ -30,6 +43,7 @@ struct SavePictureView: View {
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 361, height: 361)
                         .clipShape(RoundedRectangle(cornerRadius: 20))
+                    
                     
                     // Bloco de informações e botões
                     VStack(spacing: 16) {

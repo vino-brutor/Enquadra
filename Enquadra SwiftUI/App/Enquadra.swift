@@ -19,6 +19,8 @@ struct Enquadra: App {
     var body: some Scene {
         WindowGroup {
             TabBar()
-        }.modelContainer(for: Subject.self)
+        }.modelContainer(for: [
+            Subject.self,
+        ])
     }
 }

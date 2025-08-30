@@ -14,6 +14,22 @@ struct SubjectsView: View {
     @Query var subjects: [Subject]
     @State var editingSubject: Subject? = nil
     
+    
+//    init() {
+//        let appearance = UINavigationBarAppearance()
+//        
+//        appearance.titleTextAttributes = [
+//            .foregroundColor: UIColor(Color.grafite),
+//        ]
+//        
+//        appearance.largeTitleTextAttributes = [
+//                .foregroundColor: UIColor(Color.grafite)
+//            ]
+//        
+//        UINavigationBar.appearance().standardAppearance = appearance
+//        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+//    }
+    
     var body: some View {
         NavigationStack {
             
@@ -56,6 +72,7 @@ struct SubjectsView: View {
             .sheet(isPresented: $showNewSubjectSheet) {
                 CreateSubjectView()
             }
+            .presentationDragIndicator(.visible)
         }
     }
 }

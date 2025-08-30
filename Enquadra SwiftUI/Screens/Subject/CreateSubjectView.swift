@@ -27,6 +27,15 @@ struct CreateSubjectView: View {
             _iconSelected = State(initialValue: subjectToEdit?.icon)
         }
     
+    init() {
+        let appearance = UINavigationBarAppearance()
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
+        appearance.backgroundColor = UIColor(Color.nublado)
+        
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+    }
+    
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
@@ -181,6 +190,7 @@ struct CreateSubjectView: View {
             }
             .background(.nublado)
             .navigationTitle(isEditing ? "Editar matéria" :"Criar matéria")
+            .foregroundStyle(.grafite)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {

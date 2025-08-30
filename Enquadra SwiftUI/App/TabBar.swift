@@ -34,7 +34,7 @@ struct TabBar: View {
                 AccountView() //as telas tem um compoentne q é tabItem
             }
             .tabItem { //aqui dentro coloca o conteu da tab
-                Text("Conta")
+                Text("Estatísticas")
                 Image(systemName: "person.2.fill")
             }
             .tag(3) //tag que representa cada uma das telas

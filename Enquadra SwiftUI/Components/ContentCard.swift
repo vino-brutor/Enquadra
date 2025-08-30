@@ -54,7 +54,7 @@ struct ContentCard: View {
                 Image(systemName: "ellipsis.circle")
                     .resizable()
                     .padding()
-                    .frame(width: 64, height: 64)
+                    .frame(width: 56, height: 56)
                     .foregroundStyle(.sol)
                     .font(.system(.body).weight(.semibold))
                     .onTapGesture {
@@ -90,6 +90,7 @@ struct ContentCard: View {
                     SavePictureView(image: pictureUIImage ,isEditing: true, pictureToEdit: picture)
                 }
             }
+            .presentationDragIndicator(.visible)
             
         }
     }
