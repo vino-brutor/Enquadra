@@ -10,6 +10,7 @@ struct SavePictureView: View {
     @Query var subjects: [Subject]
     
     @State var showAlertNoSelectedSubjects: Bool = false
+    @State var showAlertNoTitle: Bool = false
     @State var selectedSubject: Subject?
     @State var pictureTitle: String = ""
     @State var isLoading: Bool = false
@@ -123,9 +124,14 @@ struct SavePictureView: View {
                                     return
                                 }
                                 
+                                guard !pictureTitle.isEmpty else {
+                                    showAlertNoTitle = true
+                                    return
+                                }
+                                
                                 if let fileName = PictureStorage.saveImage(image: image) {
                                     let picture = Picture(
-                                        name: pictureTitle.isEmpty ? "foto \(Date())" : pictureTitle,
+                                        name: pictureTitle,
                                         picturePath: fileName,
                                         subject: subject
                                     )
@@ -168,7 +174,10 @@ struct SavePictureView: View {
                     }
                 }
             }
-            .alert("Selecione uma matéria antes de salvar.", isPresented: $showAlertNoSelectedSubjects) {
+            .alert("Selecione uma matéria antes de salvar", isPresented: $showAlertNoSelectedSubjects) {
+                Button("OK", role: .cancel) {}
+            }
+            .alert("Preencha o campo de Título antes de salvar", isPresented: $showAlertNoTitle) {
                 Button("OK", role: .cancel) {}
             }
             .onAppear {

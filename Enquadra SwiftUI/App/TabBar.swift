@@ -31,11 +31,11 @@ struct TabBar: View {
             }.tag(2)
             
             NavigationStack{
-                AccountView() //as telas tem um compoentne q é tabItem
+                AccountView(tabSelection: $initialTab) //as telas tem um compoentne q é tabItem
             }
             .tabItem { //aqui dentro coloca o conteu da tab
                 Text("Estatísticas")
-                Image(systemName: "person.2.fill")
+                Image(systemName: "chart.bar.fill")
             }
             .tag(3) //tag que representa cada uma das telas
             

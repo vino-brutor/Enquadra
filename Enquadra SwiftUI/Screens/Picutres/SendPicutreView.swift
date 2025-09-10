@@ -49,6 +49,7 @@ struct SendPicutreView: View {
             .frame(maxWidth: .infinity, minHeight: 104)
             .background(.grafite)
         }
+    .background(.grafite)
     }
 }
 
